@@ -48,3 +48,4 @@ const importantDates = [new Date(), '2020-10-10'];
 const importantDates2: (Date | string)[] = [];
 
 // Where to use typed arrays
+// Any time we need to represent a collection of records with some arbitrary sort order.
