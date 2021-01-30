@@ -52,3 +52,58 @@ const oldCherokee = {
 printVehicle2(oldCherokee);
 
 // We are not limited to primitive objects
+
+interface Vehicle2 {
+	name: string;
+	year: number;
+	broken: boolean;
+	summary(): string;
+}
+
+const oldAccord = {
+	name: 'accord',
+	year: 2000,
+	broken: false,
+	summary(): string {
+		return `Name:${this.name}`;
+	},
+};
+
+const printVehicle3 = (vehicle: Vehicle2): void => {
+	console.log(vehicle.summary());
+};
+
+printVehicle2(oldAccord);
+
+// if the object satisfies each type in the interface, then typescript wont throw an error. This includes objects that have more that what is necessary.
+
+// Example
+
+interface Reportable {
+	summary(): string;
+}
+
+const oldDurango = {
+	name: 'durango',
+	year: 2000,
+	broken: false,
+	summary(): string {
+		return `Name:${this.name}`;
+	},
+};
+
+const drink2 = {
+	color: 'brown',
+	carbonated: true,
+	sugar: 40,
+	summary(): string {
+		return `My drink has ${this.sugar} grams of sugar`;
+	},
+};
+
+const printSummary = (item: Reportable): void => {
+	console.log(item.summary());
+};
+
+printSummary(oldDurango);
+printSummary(drink2);
