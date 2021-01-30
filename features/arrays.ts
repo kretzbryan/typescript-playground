@@ -38,3 +38,13 @@ carMakers.push(100); //  TS automatically throws an error if you try to put anyt
 carMakers.map((car: string): string => {
 	return car;
 });
+
+// FLexible types in arrays
+
+// Type Inference will only work if initial types of data are in the array
+const importantDates = [new Date(), '2020-10-10'];
+
+// This is syntax for type annotation with flexible arrays. This tells TS the data type will either be a Date class or a string.
+const importantDates2: (Date | string)[] = [];
+
+// Where to use typed arrays
